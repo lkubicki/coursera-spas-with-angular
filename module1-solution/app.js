@@ -12,7 +12,7 @@ function LunchCheckController($scope) {
     var nbrOfItems = 0;
     $scope.response = "Enjoy!";
     
-    if($scope.list != null) {
+    if($scope.list != null && $scope.list != '') {
       nbrOfItems = $scope.list.split(',').length;
     }
 
