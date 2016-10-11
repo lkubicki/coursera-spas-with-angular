@@ -15,7 +15,7 @@
 
         narrowController.getMatchedMenuItems = function(searchTerm) {
             narrowController.found = [];
-            if(searchTerm != undefined && searchTerm != null) {
+            if(searchTerm != undefined && searchTerm != null && searchTerm != '') {
                 var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
                 promise.then(function(response) {
                     var received = response.data.menu_items;
@@ -26,7 +26,6 @@
                         }
                     }
                     narrowController.found = foundItems;
-                    
                 })
             }
         }
