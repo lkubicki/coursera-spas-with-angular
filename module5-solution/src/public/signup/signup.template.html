@@ -1,4 +1,4 @@
-<form name="newsletterForm" novalidate ng-controller="signUpController as ctrl">
+<form name="newsletterForm" novalidate>
     <div class="form-group">
         <label for="firstName">First name:</label>
         <input type="text" name="firstName" id="firstName" ng-model="ctrl.user.firstName"
@@ -38,12 +38,12 @@
     </div>
     <div class="form-group">
         <label for="dish">Favorite dish code:</label>
-        <input type="number" name="dish" id="dish"  ng-model="ctrl.user.favouriteDish" class="form-control" placeholder="eg. L1" required minlength="1">
+        <input type="number" name="dish" id="dish"  ng-model="ctrl.user.favoriteDish" class="form-control" placeholder="eg. L1" required minlength="1">
         <span ng-if="newsletterForm.phone.$touched && !$ctrl.dishExists">
             No such dish could be found.
         </span>
     </div>
-    <button class="form-control" ng-disabled="newsletterForm.$invalid">
+    <button class="form-control" ng-disabled="newsletterForm.$invalid" ng-click="ctrl.submit()">
         Submit
     </button>
 </form>

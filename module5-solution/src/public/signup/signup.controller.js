@@ -11,6 +11,7 @@
         signUpCtrl.myinfoSrvc = myinfoService;
 
         signUpCtrl.submit = function () {
+            console.log("submit");
             signUpCtrl.myinfoSrvc.setUserInfo(signUpCtrl.user.firstName, signUpCtrl.user.lastName, signUpCtrl.user.email, signUpCtrl.user.phone, signUpCtrl.user.favoriteDish);
             if (signUpCtrl.dishExists()) {
                 signUpCtrl.completed = true;
@@ -18,8 +19,8 @@
         };
 
         signUpCtrl.dishExists = function () {
-            console.log("jest");
-            return signUpCtrl.menuService().checkCategory(signUpCtrl.user.favoriteDish).then(function () {
+            return true;
+            return signUpCtrl.menuService.checkCategory(signUpCtrl.user.favoriteDish).then(function () {
                 signUpCtrl.dishExists = true;
                 return true;
             }, function () {

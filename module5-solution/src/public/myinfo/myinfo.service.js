@@ -11,7 +11,7 @@
         this.phone = '';
         this.favoriteDish = '';
 
-        this.setUserInfo = function (firstName, lstaNem,email, phone,favouriteDish) {
+        this.setUserInfo = function (firstName, lastName, email, phone, favoriteDish) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.email = email;
