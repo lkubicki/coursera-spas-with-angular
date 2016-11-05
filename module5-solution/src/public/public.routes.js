@@ -45,7 +45,7 @@
                 url: '/signup',
                 templateUrl: 'src/public/signup/signup.html'
             })
-            .state('myinfo', {
+            .state('public.myinfo', {
                 url: '/myinfo',
                 templateUrl: 'src/public/myinfo/myinfo.html'
             })

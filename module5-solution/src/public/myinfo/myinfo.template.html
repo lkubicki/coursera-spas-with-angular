@@ -1,4 +1,9 @@
-{{ctrl.getRegisteredUser().firstName}} {{ctrl.getRegisteredUser().lastName}}
-{{ctrl.getRegisteredUser().email}}
-{{ctrl.getRegisteredUser().phone}}
-{{ctrl.getRegisteredUser().favoriteDish}}
+<div ng-if="ctrl.getRegisteredUser().firstName">
+    {{ctrl.getRegisteredUser().firstName}} {{ctrl.getRegisteredUser().lastName}}
+    {{ctrl.getRegisteredUser().email}}
+    {{ctrl.getRegisteredUser().phone}}
+    {{ctrl.getRegisteredUser().favoriteDish}}
+</div>
+<div ng-if="!ctrl.getRegisteredUser().firstName">
+    Not Signed Up Yet.<a ui-sref="public.signup"> Sign up Now!</a>
+</div>

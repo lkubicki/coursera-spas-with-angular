@@ -5,12 +5,15 @@
 
     myInfoController.$inject = ['myinfoService'];
     function myInfoController(myinfoService) {
-        var dishExists = true;
         var myInfoCtrl = this;
         myInfoCtrl.myinfoSrvc = myinfoService;
+        myInfoCtrl.userInfo;
 
         myInfoCtrl.getRegisteredUser = function () {
-            return myInfoCtrl.myinfoSrvc.getUserInfo();
+            if (!myInfoCtrl.userInfo) {
+                myInfoCtrl.userInfo = myInfoCtrl.myinfoSrvc.getUserInfo();
+            }
+            return myInfoCtrl.userInfo;
         };
     }
 })();
