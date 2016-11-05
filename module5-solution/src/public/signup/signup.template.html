@@ -30,7 +30,8 @@
     </div>
     <div class="form-group">
         <label for="phone">Phone number:</label>
-        <input type="text" name="phone" id="phone" ng-model="ctrl.user.phone" class="form-control" placeholder="Phone ###-###-####"
+        <input type="text" name="phone" id="phone" ng-model="ctrl.user.phone" class="form-control"
+               placeholder="Phone ###-###-####"
                pattern="(\d{3})-(\d{3})-(\d{4})">
         <span ng-if="newsletterForm.phone.$touched && newsletterForm.phone.$invalid">
             Phone must be in the format ###-###-####.
@@ -38,12 +39,14 @@
     </div>
     <div class="form-group">
         <label for="dish">Favorite dish code:</label>
-        <input type="number" name="dish" id="dish"  ng-model="ctrl.user.favoriteDish" class="form-control" placeholder="eg. L1" required minlength="1">
-        <span ng-if="newsletterForm.phone.$touched && !$ctrl.dishExists">
-            No such dish could be found.
-        </span>
+        <input type="number" name="dish" id="dish" ng-model="ctrl.user.favoriteDish" class="form-control"
+               placeholder="eg. L1" required minlength="1">
+        <!--<span ng-if="newsletterForm.phone.$touched && !$ctrl.dishExists">-->
+        <!--No such dish could be found.-->
+        <!--</span>-->
     </div>
-    <button class="form-control" ng-disabled="newsletterForm.$invalid" ng-click="ctrl.submit()">
+    <span ng-show="newsletterForm.$submitted && newsletterForm.$valid">Your information has been saved.</span>
+    <button class="form-control" ng-disabled="newsletterForm.$invalid || (newsletterForm.$submitted && newsletterForm.$valid)" ng-click="ctrl.submit()">
         Submit
     </button>
 </form>

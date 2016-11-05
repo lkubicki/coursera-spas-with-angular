@@ -1,8 +1,8 @@
 <div ng-if="ctrl.getRegisteredUser().firstName">
-    {{ctrl.getRegisteredUser().firstName}} {{ctrl.getRegisteredUser().lastName}}
-    {{ctrl.getRegisteredUser().email}}
-    {{ctrl.getRegisteredUser().phone}}
-    {{ctrl.getRegisteredUser().favoriteDish}}
+    <div>{{ctrl.getRegisteredUser().firstName}} {{ctrl.getRegisteredUser().lastName}}</div>
+    <div>{{ctrl.getRegisteredUser().email}}</div>
+    <div>{{ctrl.getRegisteredUser().phone}}</div>
+    <div>{{ctrl.getRegisteredUser().favoriteDish}}</div>
 </div>
 <div ng-if="!ctrl.getRegisteredUser().firstName">
     Not Signed Up Yet.<a ui-sref="public.signup"> Sign up Now!</a>
